@@ -7,11 +7,11 @@
   
   <h2>🌟 Welcome</h2>
 
-  <!-- Input section -->
+  <!-- Input -->
   <input type="text" id="nameInput" placeholder="Enter your name" style="padding:8px;">
   <button onclick="showGreeting()">Submit</button>
 
-  <!-- Greeting section -->
+  <!-- Greeting -->
   <div id="greeting" style="margin-top:20px;"></div>
 
   <button onclick="clickMe()">Click Me</button>
@@ -30,17 +30,32 @@
 
       document.getElementById("greeting").innerHTML =
         `<h3>Hi ${userName} 👋</h3>
-         <p>Hope you're doing great today 😊</p>
-         <p>Wishing you a productive and happy day ahead!</p>`;
+         <p>Hope you're doing great today 😊</p>`;
     }
+
+    // 🎲 Random messages
+    const messages = [
+      "Keep smiling, {name}! 😊",
+      "You're doing amazing, {name}! 🚀",
+      "Have a fantastic day, {name}! 🌟",
+      "Stay positive, {name}! 💪",
+      "Great things are coming your way, {name}! ✨"
+    ];
 
     function clickMe() {
       if (userName === "") {
         document.getElementById("msg").innerText = "Enter your name first 🙂";
-      } else {
-        document.getElementById("msg").innerText =
-          `Keep smiling, ${userName}! 😊`;
+        return;
       }
+
+      // Pick random message
+      const randomIndex = Math.floor(Math.random() * messages.length);
+      let message = messages[randomIndex];
+
+      // Replace {name} with actual name
+      message = message.replace("{name}", userName);
+
+      document.getElementById("msg").innerText = message;
     }
   </script>
 
