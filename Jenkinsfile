@@ -11,19 +11,19 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t simple-ui-app .'
+                sh 'docker build -t lite-ui .'
             }
         }
 
         stage('Stop Old Container') {
             steps {
-                sh 'docker rm -f simple-container || true'
+                sh 'docker rm -f lite-container || true'
             }
         }
 
         stage('Run Container') {
             steps {
-                sh 'docker run -d -p 3000:3000 --name simple-container simple-ui-app'
+                sh 'docker run -d -p 3000:3000 --name lite-container lite-ui'
             }
         }
     }

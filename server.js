@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Run on port 3000
+// Run server
 app.listen(3000, () => {
-  console.log("Server running on port 3000");
+  console.log("🚀 Server running on http://localhost:3000");
 });
