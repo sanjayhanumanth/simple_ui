@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🚀 Hello from EC2 + Docker + Jenkins</h1>
+    <p>Running on Port 3000 without Nginx</p>
+    <button onclick="showMessage()">Click Me</button>
+    <p id="msg"></p>
+  </div>
+
+  <script>
+    function showMessage() {
+      document.getElementById("msg").innerText = "Pipeline working 🔥";
+    }
+  </script>
+</body>
+</html>

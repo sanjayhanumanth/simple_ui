@@ -1,0 +1,23 @@
+body {
+  font-family: Arial;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  text-align: center;
+  margin-top: 100px;
+  color: white;
+}
+
+.container {
+  background: rgba(0,0,0,0.3);
+  padding: 30px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background: #4caf50;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
