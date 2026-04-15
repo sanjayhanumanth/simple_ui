@@ -7,16 +7,40 @@
   
   <h2>🌟 Welcome</h2>
 
-  <h3>Hi Sivaprakash 👋</h3>
-  <p>Hope you're doing great today 😊</p>
-  <p>Wishing you a productive and happy day ahead!</p>
+  <!-- Input section -->
+  <input type="text" id="nameInput" placeholder="Enter your name" style="padding:8px;">
+  <button onclick="showGreeting()">Submit</button>
+
+  <!-- Greeting section -->
+  <div id="greeting" style="margin-top:20px;"></div>
 
   <button onclick="clickMe()">Click Me</button>
   <p id="msg"></p>
 
   <script>
+    let userName = "";
+
+    function showGreeting() {
+      userName = document.getElementById("nameInput").value;
+
+      if (userName.trim() === "") {
+        alert("Please enter your name");
+        return;
+      }
+
+      document.getElementById("greeting").innerHTML =
+        `<h3>Hi ${userName} 👋</h3>
+         <p>Hope you're doing great today 😊</p>
+         <p>Wishing you a productive and happy day ahead!</p>`;
+    }
+
     function clickMe() {
-      document.getElementById("msg").innerText = "Keep smiling, Karthick Kannan! 😊";
+      if (userName === "") {
+        document.getElementById("msg").innerText = "Enter your name first 🙂";
+      } else {
+        document.getElementById("msg").innerText =
+          `Keep smiling, ${userName}! 😊`;
+      }
     }
   </script>
 
